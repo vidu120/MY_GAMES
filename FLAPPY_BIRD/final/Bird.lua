@@ -34,6 +34,7 @@ function Bird:collision(pipe)
         condition = self.y + 2 < pipe.y
     end
     if self.x + self.width - 4 > pipe.x and self.x + 4 < pipe.x + pipe.width and condition then
+        sounds.explosion:play()
         sounds.hurt:play()
         return true
     else
