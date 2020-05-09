@@ -43,8 +43,9 @@ function Bird:collision(pipe)
 end
 
 function Bird:score(pipe)
-    if self.x >= pipe.x + pipe.width and self.x <= pipe.x + pipe.width + 1 then
+    if self.x >= pipe.x + pipe.width then
         sounds.score:play()
+        pipe.score = true
         return true
     end
     return false

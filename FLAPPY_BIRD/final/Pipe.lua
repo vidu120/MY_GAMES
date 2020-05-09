@@ -16,6 +16,7 @@ function Pipe:init(orientation, y)
 
     self.width = PIPE_WIDTH
     self.orientation = orientation == "top" and -1 or 1
+    self.score = false
 end
 
 function Pipe:render()

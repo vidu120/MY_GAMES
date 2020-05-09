@@ -41,7 +41,7 @@ function Play:update(dt)
                 sounds.explosion:play()
                 self.scrollCon = false
             end
-            if self.bird:score(v.pipes.top) then
+            if not v.pipes.top.score and self.bird:score(v.pipes.top) then
                 self.score = self.score + 1
                 highScore = math.max(self.score, highScore)
                 if self.score == highScore and self.once then
