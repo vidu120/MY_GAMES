@@ -17,9 +17,9 @@ function StateMachine:init(states)
 end
 
 function StateMachine:change(statename, args)
-    assert(self.states.statename)
+    assert(self.states[statename])
     self.current:exit()
-    self.current = self.states.statename()
+    self.current = self.states[statename]()
     self.current:enter(args)
 end
 

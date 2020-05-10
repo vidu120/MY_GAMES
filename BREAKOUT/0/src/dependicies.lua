@@ -11,4 +11,4 @@ require("src/StateMachine")
 
 --different states within the game
 require("src/states/BaseState")
-require("src/states/Play")
+require("src/states/StartState")
