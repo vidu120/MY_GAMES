@@ -7,6 +7,11 @@ end
 function PlayState:render()
     -- body
     self.paddle:render()
+
+    if self.pause then
+        love.graphics.setFont(gFonts.large)
+        love.graphics.printf("PAUSED" , 0 , virtual_height / 2 - 32  , virtual_width , "center")
+    end
 end
 
 function PlayState:update(dt)
