@@ -37,8 +37,12 @@ function love.load()
     }
 
     gSounds = {
-        ["hover"] = love.audio.newSource("sounds/select.wav", "static")
+        ["hover"] = love.audio.newSource("sounds/select.wav", "static"),
+        ["pause"] = love.audio.newSource("sounds/pause.wav", "static"),
+        ["music"] = love.audio.newSource("sounds/music.wav", "static")
     }
+    gSounds.music:setLooping(true)
+    gSounds.music:play()
 
     gState =
         StateMachine(

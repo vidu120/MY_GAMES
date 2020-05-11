@@ -10,7 +10,7 @@ function PlayState:render()
 
     if self.pause then
         love.graphics.setFont(gFonts.large)
-        love.graphics.printf("PAUSED" , 0 , virtual_height / 2 - 32  , virtual_width , "center")
+        love.graphics.printf("PAUSED", 0, virtual_height / 2 - 32, virtual_width, "center")
     end
 end
 
@@ -23,6 +23,7 @@ function PlayState:update(dt)
         else
             self.pause = true
         end
+        gSounds.pause:play()
     end
 
     if self.pause then
