@@ -11,6 +11,7 @@ function StartState:update(dt)
         love.event.quit()
     elseif love.keyboard.wasPressed("enter") or love.keyboard.wasPressed("return") then
         gState:change(highlighted == 1 and "play" or "HighScore")
+        gSounds.selection:play()
     end
 end
 
