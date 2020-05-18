@@ -5,8 +5,11 @@ function PlayState:init()
 
     self.ball = Ball(math.random(7))
 
-    self.ball.dx = (math.random(2) == 1 and 100 or -100 ) + math.random(50)
-    self.ball.dy = -math.random(100 , 200)
+    --this will make a random rows of bricks laid on top of each other
+    self.brick = LevelMaker.createMap()
+
+    self.ball.dx = math.random(-200, 200)
+    self.ball.dy = math.random(-50, -60)
 
     -- give ball position in the center
     self.ball.x = virtual_width / 2 - 4
@@ -18,6 +21,10 @@ function PlayState:render()
     -- body
     self.paddle:render()
     self.ball:render()
+    for k , bricks in ipairs(self.brick) do
+        bricks:render()
+    end
+
     if self.pause then
         love.graphics.setFont(gFonts.large)
         love.graphics.printf("PAUSED", 0, virtual_height / 2 - 32, virtual_width, "center")
@@ -46,6 +53,11 @@ function PlayState:update(dt)
         gSounds.paddle_hit:play()
     end
 
+    for k , bricks in ipairs(self.brick) do
+        if bricks.inPlay and self.ball:collision(bricks) then
+            bricks:hit()
+        end
+    end
     self.paddle:update(dt)
     self.ball:update(dt)
 end

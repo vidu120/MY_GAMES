@@ -47,7 +47,8 @@ function love.load()
         ["pause"] = love.audio.newSource("sounds/pause.wav", "static"),
         ["music"] = love.audio.newSource("sounds/music.wav", "static"),
         ["wall_hit"] = love.audio.newSource("sounds/wall_hit.wav", "static"),
-        ["paddle_hit"] = love.audio.newSource("sounds/paddle_hit.wav", "static")
+        ["paddle_hit"] = love.audio.newSource("sounds/paddle_hit.wav", "static"),
+        ["brick_hit"] = love.audio.newSource("sounds/brick-hit-1.wav", "static")
     }
     gSounds.music:setLooping(true)
     gSounds.music:play()

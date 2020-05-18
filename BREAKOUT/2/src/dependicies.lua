@@ -16,6 +16,9 @@ require("src/Paddle")
 
 require("src/Ball")
 
+require("src/Brick")
+
+require("src/LevelMaker")
 --different states within the game
 require("src/states/BaseState")
 require("src/states/StartState")
